@@ -1,4 +1,4 @@
-
+getgenv().zephyrhubv2executed = true
 
 local bb=game:service'VirtualUser'
 game:service'Players'.LocalPlayer.Idled:connect(function()
