@@ -1,4 +1,4 @@
-if getgenv().zephyrhubv2executed then return end
+--if getgenv().zephyrhubv2executed then return end
 
 
 
@@ -19,7 +19,7 @@ getgenv().zephyrhubv2executed = true
 local lib = loadstring(game:HttpGet"https://raw.githubusercontent.com/jxrivmthbrehwntywr/Zephyr/main/lib")()
 
 
-local win = lib:Window("YBA" ,Color3.fromRGB(44, 120, 224), Enum.KeyCode.RightControl)
+local win = lib:Window("YBA",Color3.fromRGB(44, 120, 224), Enum.KeyCode.RightControl)
 
 
 local info = win:Tab("Information")
