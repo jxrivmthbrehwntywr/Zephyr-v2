@@ -6,6 +6,6 @@ local gui = game:GetService("CoreGui")["YBA Sucks Ass"]
 game:GetService("RunService").RenderStepped:Connect(function(step)
         if not game:GetService("CoreGui")["YBA Sucks Ass"] then return end
         if game:GetService("CoreGui")["YBA Sucks Ass"] then
-            game:GetService("CoreGui")["YBA Sucks Ass"].Main.Visible = false
+            game:GetService("CoreGui")["YBA Sucks Ass"].Enabled = false
         end
 end)
