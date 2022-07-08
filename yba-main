@@ -12,7 +12,7 @@ end)
 
 game.Players.LocalPlayer.Character.Humanoid.Health = 0
 
-wait(1.5)
+
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/jxrivmthbrehwntywr/Zephyr-v2/main/ybaspawnfixer.lua"))() 
 getgenv().zephyrhubv2executed = true
