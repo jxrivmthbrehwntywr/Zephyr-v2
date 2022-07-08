@@ -70,11 +70,11 @@ game:GetService("RunService").RenderStepped:Connect(function()
                 if game:GetService("Workspace")["Item_Spawns"].Items:FindFirstChild("Model") or game:GetService("Workspace")["Item_Spawns"].Items:WaitForChild("Model") then
                     wait(0.5)
 		    if game:GetService("Workspace")["Item_Spawns"].Items:FindFirstChild("Model"):FindFirstChild("MeshPart") or game:GetService("Workspace")["Item_Spawns"].Items:WaitForChild("Model"):FindFirstChild("MeshPart") then
-                    	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+                    	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["Item_Spawns"].Items:FindFirstChild("Model"):FindFirstChild("MeshPart").CFrame
 		    end
                     wait(0.5)
 		    if game:GetService("Workspace")["Item_Spawns"].Items:FindFirstChild("Model"):FindFirstChild("ClickDetector") or game:GetService("Workspace")["Item_Spawns"].Items:WaitForChild("Model"):FindFirstChild("ClickDetector") then
-                    fireclickdetector(v)
+                    fireclickdetector(game:GetService("Workspace")["Item_Spawns"].Items:FindFirstChild("Model"):FindFirstChild("ClickDetector"))
 		    end
                 end
                 
