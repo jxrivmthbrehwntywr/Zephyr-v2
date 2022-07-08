@@ -67,7 +67,7 @@ local hump = game.Players.LocalPlayer.Character.HumanoidRootPart
 game:GetService("RunService").RenderStepped:Connect(function()
         if itemfarmstate == true then
             for _, v in pairs(game:GetService("Workspace")["Item_Spawns"].Items.Model:GetChildren()) do
-                if game:GetService("Workspace")["Item_Spawns"].Items.Model then
+                if game:GetService("Workspace")["Item_Spawns"].Items:FindFirstChild("Model") or game:GetService("Workspace")["Item_Spawns"].Items:WaitForChild("Model") then
                     wait(0.5)
 		    if v.Name == "MeshPart" or "Part" then
                     	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame + Vector3.new(0, 2, 0)
