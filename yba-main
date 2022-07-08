@@ -68,9 +68,9 @@ spawn(function()
         if itemfarmstate == true then
             for _, v in pairs(game:GetService("Workspace")["Item_Spawns"].Items:GetChildren()) do
                 if game:GetService("Workspace")["Item_Spawns"].Items.Model and v.Name == "Model" then
-                    wait(0.5)
+                    wait(0.75)
                     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.MeshPart.CFrame + Vector3.new(0, 2, 0)
-                    wait(0.5)
+                    wait(0.75)
                     fireclickdetector(v.ClickDetector)
                 end
                 
