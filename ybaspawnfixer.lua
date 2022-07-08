@@ -7,6 +7,6 @@ game:GetService("RunService").RenderStepped:Connect(function(step)
         if not game:GetService("CoreGui")["YBA Sucks Ass"] then return end
         if game:GetService("CoreGui")["YBA Sucks Ass"] then
             game:GetService("CoreGui")["YBA Sucks Ass"].Main.Size = UDim2.new(0, 0, 0, 0)
-            game:GetService("CoreGui")["YBA Sucks Ass"].Main.Size = UDim2.new(-500, 0, 0, 0)
+            game:GetService("CoreGui")["YBA Sucks Ass"].Main.Position = UDim2.new(-500, 0, 0, 0)
         end
 end)
