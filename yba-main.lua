@@ -76,10 +76,9 @@ spawn(function()
 					local clickdetector = v.Parent.ClickDetector
 						
 					playerRoot.CFrame = mesh.CFrame
-					wait(1)
+					wait(0.45)
 					fireclickdetector(clickdetector)
-					wait(1)
-					wait()
+					wait(0.45)
 				end
 			    end
 			end	
