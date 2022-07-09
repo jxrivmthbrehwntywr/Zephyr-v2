@@ -67,18 +67,19 @@ end)
 
 spawn(function()
 	while task.wait() do
-			if not getgenv().itemfarmvalue then break end
 			local playerRoot = game.Players.LocalPlayer.Character.HumanoidRootPart
 			if game:GetService("Workspace")["Item_Spawns"].Items.Model then
 			    for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do
 				if v.Name =="MeshPart" and v.Parent and v.Parent.Name == "Model" then
 					local mesh = v 
 					local model = v.Parent
+					if getgenv().itemfarmvalue then
 					local clickdetector = v.Parent.ClickDetector
-					playerRoot.CFrame = mesh.CFrame
-					wait(1)
-					fireclickdetector(clickdetector)
-					wait(1)
+						playerRoot.CFrame = mesh.CFrame
+						wait(1)
+						fireclickdetector(clickdetector)
+						wait(1)
+					end
 				end
 			    end
 			end	
