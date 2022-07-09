@@ -67,21 +67,10 @@ local hump = game.Players.LocalPlayer.Character.HumanoidRootPart
 spawn(function()
 	while task.wait() do
 		if itemfarmstate == true then
-		    for _, v in pairs(game:GetService("Workspace")["Item_Spawns"].Items.Model:GetChildren()) do
-			if game:GetService("Workspace")["Item_Spawns"].Items:FindFirstChild("Model") or game:GetService("Workspace")["Item_Spawns"].Items:WaitForChild("Model") then
-			    wait(0.75)
-			    if (game:GetService("Workspace")["Item_Spawns"].Items:FindFirstChild("Model"):FindFirstChild("MeshPart") or game:GetService("Workspace")["Item_Spawns"].Items:WaitForChild("Model"):FindFirstChild("MeshPart")) then
-				if game:GetService("Workspace")["Item_Spawns"].Items:FindFirstChild("Model"):FindFirstChild("MeshPart").Transparency == 1 then return end
-				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["Item_Spawns"].Items:FindFirstChild("Model"):FindFirstChild("MeshPart").CFrame
-			    end
-			    wait(0.75)
-			    if (game:GetService("Workspace")["Item_Spawns"].Items:FindFirstChild("Model"):FindFirstChild("ClickDetector") or game:GetService("Workspace")["Item_Spawns"].Items:WaitForChild("Model"):FindFirstChild("ClickDetector")) then
-			    fireclickdetector(game:GetService("Workspace")["Item_Spawns"].Items:FindFirstChild("Model"):FindFirstChild("ClickDetector"))
-
-			    end
-			end
-
-		    end
+		    game.Players.LocalPlayer.Character.Humanoid.HumanoidRootPart.CFrame = game:GetService("Workspace")["Item_Spawns"].Items.Model.MeshPart.CFrame
+		    wait(1)
+		    fireclickdetector(game:GetService("Workspace")["Item_Spawns"].Items.Model.ClickDetector)
+		    wait(1)
 		end
 	end
 end)
