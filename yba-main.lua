@@ -30,7 +30,10 @@ local info = win:Tab("Information")
 
 info:Label("🌌 HUB Version 🌌: 1.1 RELEASE!")
 info:Label("Update LOG:")
-info:Label("Fixed Autofarm breaking after dying")
+info:Label("#1 Fixed Autofarm breaking after dying")
+info:Label("#2 Added Infinite Jump")
+info:Label("#3 Removed Test Tab")
+info:Label("------------------------------")
 info:Label("Anti Afk is built into this script")
 info:Label("Press RightCtrl To Toggle UI")
 
@@ -247,7 +250,7 @@ end)
 
 
 
-local tab = win:Tab("Tab")
+--[[local tab = win:Tab("Tab")
 
 
 tab:Button("Button", function()
@@ -284,7 +287,7 @@ tab:Label("Label")
 
 changeclr:Colorpicker("Change UI Color",Color3.fromRGB(44, 120, 224), function(t)
 lib:ChangePresetColor(Color3.fromRGB(t.R * 255, t.G * 255, t.B * 255))
-end)
+end)]]--
 
 
 
