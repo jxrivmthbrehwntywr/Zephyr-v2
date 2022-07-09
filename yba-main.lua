@@ -26,7 +26,11 @@ local win = lib:Window(GameName,Color3.fromRGB(44, 120, 224), Enum.KeyCode.Right
 
 local info = win:Tab("Information")
 
+
+
 info:Label("🌌 HUB Version 🌌: 1.1 RELEASE!")
+info:Label("Update LOG:")
+info:Label("Fixed Autofarm breaking after dying")
 info:Label("Anti Afk is built into this script")
 info:Label("Press RightCtrl To Toggle UI")
 
