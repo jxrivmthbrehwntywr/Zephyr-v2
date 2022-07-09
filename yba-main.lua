@@ -59,15 +59,15 @@ end
 end)
 
 
-main:Toggle("Item Farm",false, function(state)
-    getgenv().itemfarmstate = state
+main:Toggle("Item Farm",false, function(value)
+    getgenv().itemfarmvalue = value
 end)
 
 
 
 spawn(function()
 	while task.wait() do
-			if getgenv().itemfarmstate == false then break end
+			if not getgenv().itemfarmvalue then break end
 			local playerRoot = game.Players.LocalPlayer.Character.HumanoidRootPart
 			if game:GetService("Workspace")["Item_Spawns"].Items.Model then
 			    for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do
@@ -75,12 +75,10 @@ spawn(function()
 					local mesh = v 
 					local model = v.Parent
 					local clickdetector = v.Parent.ClickDetector
-					if getgenv().itemfarmstate then
 					playerRoot.CFrame = mesh.CFrame
 					wait(1)
 					fireclickdetector(clickdetector)
 					wait(1)
-					end
 				end
 			    end
 			end	
