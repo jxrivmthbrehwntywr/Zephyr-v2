@@ -90,7 +90,7 @@ local itemFarm = coroutine.wrap(function()
 						fireclickdetector(clickdetector)
 						wait(0.25)
 					until not game:GetService("Workspace")["Item_Spawns"].Items:FindFirstChild(v)
-				end
+				
 			end
 		end
 	end
