@@ -71,7 +71,7 @@ spawn(function()
 			local playerRoot = game.Players.LocalPlayer.Character.HumanoidRootPart
 			if game:GetService("Workspace")["Item_Spawns"].Items.Model then
 			    for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do
-				if v.Name =="MeshPart" and v.Parent and v.Parent.Name == "Model" and then
+				if v.Name =="MeshPart" and v.Parent and v.Parent.Name == "Model" then
 					local mesh = v 
 					local model = v.Parent
 					local clickdetector = v.Parent.ClickDetector
