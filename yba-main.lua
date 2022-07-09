@@ -63,10 +63,11 @@ main:Toggle("Item Farm",false, function(state)
     getgenv().itemfarmstate = state
 end)
 
-local hump = game.Players.LocalPlayer.Character.HumanoidRootPart
+
 
 spawn(function()
 	while task.wait() do
+			if getgenv().itemfarmstate == false then break end
 			local playerRoot = game.Players.LocalPlayer.Character.HumanoidRootPart
 			if game:GetService("Workspace")["Item_Spawns"].Items.Model then
 			    for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do
