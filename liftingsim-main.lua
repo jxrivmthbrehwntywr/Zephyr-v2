@@ -1,3 +1,5 @@
+if getgenv().zephyrhubv2executed then return end
+--[WUUWRWR]--
 
 local bb=game:service'VirtualUser'
 game:service'Players'.LocalPlayer.Idled:connect(function()
@@ -7,8 +9,9 @@ game:service'Players'.LocalPlayer.Idled:connect(function()
 	bb:ClickButton2(Vector2.new())
 end)
 
-local lib = loadstring(game:HttpGet"https://raw.githubusercontent.com/jxrivmthbrehwntywr/Zephyr/main/lib")()
 
+local lib = loadstring(game:HttpGet"https://raw.githubusercontent.com/jxrivmthbrehwntywr/Zephyr/main/lib")()
+if getgenv().zephyrhubv2executed then return end
 local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
 
 
