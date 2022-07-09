@@ -19,8 +19,9 @@ getgenv().zephyrhubv2executed = true
 
 local lib = loadstring(game:HttpGet"https://raw.githubusercontent.com/jxrivmthbrehwntywr/Zephyr/main/lib")()
 
+local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
 
-local win = lib:Window("Zephyr#4547 Yba Script",Color3.fromRGB(44, 120, 224), Enum.KeyCode.RightControl)
+local win = lib:Window(GameName,Color3.fromRGB(44, 120, 224), Enum.KeyCode.RightControl)
 
 
 local info = win:Tab("Information")
@@ -57,20 +58,19 @@ end)
 end
 end)
 
-itemfarmstate = false
+
 main:Toggle("Item Farm",false, function(state)
-    itemfarmstate = state
+    getgenv().itemfarmstate = state
 end)
 
 local hump = game.Players.LocalPlayer.Character.HumanoidRootPart
 
 spawn(function()
 	while task.wait() do
-		if itemfarmstate == true then
 			local playerRoot = game.Players.LocalPlayer.Character.HumanoidRootPart
 			if game:GetService("Workspace")["Item_Spawns"].Items.Model then
 			    for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do
-				if v.Name =="MeshPart" and v.Parent and v.Parent.Name == "Model" then
+				if v.Name =="MeshPart" and v.Parent and v.Parent.Name == "Model" and getgenv().itemfarmstate then
 					local mesh = v 
 					local model = v.Parent
 					local clickdetector = v.Parent.ClickDetector
@@ -82,7 +82,7 @@ spawn(function()
 				end
 			    end
 			end	
-		end
+		
 	end
 end)
 
