@@ -70,7 +70,8 @@ spawn(function()
 		    for _, v in pairs(game:GetService("Workspace")["Item_Spawns"].Items.Model:GetChildren()) do
 			if game:GetService("Workspace")["Item_Spawns"].Items:FindFirstChild("Model") or game:GetService("Workspace")["Item_Spawns"].Items:WaitForChild("Model") then
 			    wait(0.75)
-			    if (game:GetService("Workspace")["Item_Spawns"].Items:FindFirstChild("Model"):FindFirstChild("MeshPart") or game:GetService("Workspace")["Item_Spawns"].Items:WaitForChild("Model"):FindFirstChild("MeshPart")) and game:GetService("Workspace")["Item_Spawns"].Items:FindFirstChild("Model"):FindFirstChild("MeshPart").Transparency == 0 then
+			    if (game:GetService("Workspace")["Item_Spawns"].Items:FindFirstChild("Model"):FindFirstChild("MeshPart") or game:GetService("Workspace")["Item_Spawns"].Items:WaitForChild("Model"):FindFirstChild("MeshPart")) then
+				if game:GetService("Workspace")["Item_Spawns"].Items:FindFirstChild("Model"):FindFirstChild("MeshPart").Transparency == 1 then return end
 				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["Item_Spawns"].Items:FindFirstChild("Model"):FindFirstChild("MeshPart").CFrame
 			    end
 			    wait(0.75)
