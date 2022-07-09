@@ -81,9 +81,9 @@ local itemFarm = coroutine.wrap(function()
 					local clickdetector = v.Parent.ClickDetector
 
 					playerRoot.CFrame = mesh.CFrame
-					wait(0.32)
+					wait(0.25)
 					fireclickdetector(clickdetector)
-					wait(0.32)
+					wait(0.25)
 				until not game:GetService("Workspace")["Item_Spawns"].Items:FindFirstChild(v)
 			end
 				
