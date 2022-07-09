@@ -66,12 +66,21 @@ local hump = game.Players.LocalPlayer.Character.HumanoidRootPart
 
 spawn(function()
 	while task.wait() do
-		if itemfarmstate == true and game:GetService("Workspace")["Item_Spawns"].Items.Model.MeshPart.Transparency == 0 then
-		    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["Item_Spawns"].Items.Model.MeshPart.CFrame
-		    wait(0.75)
-		    fireclickdetector(game:GetService("Workspace")["Item_Spawns"].Items.Model.ClickDetector)
-		    wait(0.75)
-		end
+		local playerRoot = game.Players.LocalPlayer.Character.HumanoidRootPart
+		if game:GetService("Workspace")["Item_Spawns"].Items.Model then
+		    for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do
+			if v.Name =="MeshPart" and v.Parent and v.Parent.Name == "Model" then
+				local mesh = v 
+				local model = v.Parent
+				local clickdetector = v.Parent.ClickDetector
+
+				playerRoot.CFrame = mesh.CFrame
+				wait(1)
+				fireclickdetector(clickdetector)
+				wait(1)
+			end
+		    end
+		end		
 	end
 end)
 
