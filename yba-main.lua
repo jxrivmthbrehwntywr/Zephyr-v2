@@ -76,9 +76,9 @@ local itemFarm = coroutine.wrap(function()
 							local clickdetector = v.Parent.ClickDetector
 
 							playerRoot.CFrame = mesh.CFrame
-							wait(0.45)
+							wait(0.35)
 							fireclickdetector(clickdetector)
-							wait(0.45)
+							wait(0.35)
 					end
 				end
 			end
