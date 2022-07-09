@@ -21,14 +21,16 @@ local lib = loadstring(game:HttpGet"https://raw.githubusercontent.com/jxrivmthbr
 
 local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
 
-local win = lib:Window(GameName,Color3.fromRGB(44, 120, 224), Enum.KeyCode.RightControl)
+getgenv().zephyrhubversion = "v1.2"
+
+local win = lib:Window((GameName, " ", getgenv().zephyrhubversion),Color3.fromRGB(44, 120, 224), Enum.KeyCode.RightControl)
 
 
 local info = win:Tab("Information")
 
 
 
-info:Label("🌌 HUB Version 🌌: 1.1 RELEASE!")
+info:Label("🌌 HUB Version 🌌: 1.2 RELEASE!")
 info:Label("Update LOG:")
 info:Label("#1 Fixed Autofarm breaking after dying")
 info:Label("#2 Added Infinite Jump")
