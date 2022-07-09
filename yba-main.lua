@@ -200,6 +200,16 @@ end)
 playertab:Toggle("JumpPower",false, function(t)
      getgenv().playerjumpheighttoggle = t
 end)
+	
+playertab:Toggle("Inf Jump", false, function(t)
+     getgenv().infjumptoggle = t	
+end)
+	
+game:GetService("UserInputService").JumpRequest:connect(function()
+	if etgenv().infjumptoggle then
+		game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+	end
+end)
 
 game:GetService("RunService").RenderStepped:Connect(function()
     if getgenv().playerwalkspeedtoggle then
