@@ -72,17 +72,18 @@ local itemFarm = coroutine.wrap(function()
 	while wait() do
 		if getgenv().itemfarmvalue then
 			local playerRoot = game.Players.LocalPlayer.Character.HumanoidRootPart
-				if game:GetService("Workspace")["Item_Spawns"].Items.Model and getgenv().itemfarmvalue then
 					for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do
 						if v.Name =="MeshPart" and v.Parent and v.Parent.Name == "Model" and getgenv().itemfarmvalue then
+						repeat 
 							local mesh = v 
 							local model = v.Parent
 							local clickdetector = v.Parent.ClickDetector
 
 							playerRoot.CFrame = mesh.CFrame
-							wait(0.35)
+							wait(0.32)
 							fireclickdetector(clickdetector)
-							wait(0.35)
+							wait(0.32)
+						until not game:GetService("Workspace")["Item_Spawns"].Items:FindFirstChild(v)
 					end
 				end
 			end
