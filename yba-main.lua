@@ -23,7 +23,7 @@ local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.Place
 
 getgenv().zephyrhubversion = "v1.2"
 
-local win = lib:Window((GameName, " ", getgenv().zephyrhubversion),Color3.fromRGB(44, 120, 224), Enum.KeyCode.RightControl)
+local win = lib:Window(GameName,Color3.fromRGB(44, 120, 224), Enum.KeyCode.RightControl)
 
 
 local info = win:Tab("Information")
