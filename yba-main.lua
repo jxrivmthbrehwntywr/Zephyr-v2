@@ -64,27 +64,29 @@ main:Toggle("Item Farm",false, function(value)
 end)
 
 
-
-spawn(function()
-	while task.wait() do
+local itemFarm = coroutine.wrap(function()
+	while wait() do
+		if getgenv().itemfarmvalue then
 			local playerRoot = game.Players.LocalPlayer.Character.HumanoidRootPart
-			if game:GetService("Workspace")["Item_Spawns"].Items.Model and getgenv().itemfarmvalue then
-			    for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do
-				if v.Name =="MeshPart" and v.Parent and v.Parent.Name == "Model" and getgenv().itemfarmvalue then
-					local mesh = v 
-					local model = v.Parent
-					local clickdetector = v.Parent.ClickDetector
-						
-					playerRoot.CFrame = mesh.CFrame
-					wait(0.45)
-					fireclickdetector(clickdetector)
-					wait(0.45)
+				if game:GetService("Workspace")["Item_Spawns"].Items.Model and getgenv().itemfarmvalue then
+					for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do
+						if v.Name =="MeshPart" and v.Parent and v.Parent.Name == "Model" and getgenv().itemfarmvalue then
+							local mesh = v 
+							local model = v.Parent
+							local clickdetector = v.Parent.ClickDetector
+
+							playerRoot.CFrame = mesh.CFrame
+							wait(0.45)
+							fireclickdetector(clickdetector)
+							wait(0.45)
+					end
 				end
-			    end
-			end	
-		
+			end
+		end
 	end
 end)
+
+itemFarm()
 
 main:Label("Stand Farming")
 
