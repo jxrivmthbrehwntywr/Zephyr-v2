@@ -77,9 +77,9 @@ local itemFarm = coroutine.wrap(function()
 	while wait() do	
 		if getgenv().itemfarmvalue then
 			local playerRoot = game.Players.LocalPlayer.Character.HumanoidRootPart
-			
+				
 			for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do
-				if v.Name =="MeshPart" and v.Parent and v.Parent.Name == "Model" and getgenv().itemfarmvalue then
+				if v.Name =="MeshPart" and v.Parent and v.Parent.Name == "Model" and getgenv().itemfarmvalue then	
 					repeat 
 						local mesh = v 
 						local model = v.Parent
@@ -92,10 +92,11 @@ local itemFarm = coroutine.wrap(function()
 					until not game:GetService("Workspace")["Item_Spawns"].Items:FindFirstChild(v)
 				end
 			end
-				
 		end
 	end
-end)
+end)--bals
+
+
 
 
 
