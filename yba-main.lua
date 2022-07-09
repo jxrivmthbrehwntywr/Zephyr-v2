@@ -1,5 +1,5 @@
 if getgenv().zephyrhubv2executed then return end
---[WUUWRWR]--v.1.2
+--[WUUWRWR]--v.1.2 peach = ass
 
 
 
@@ -21,9 +21,7 @@ local lib = loadstring(game:HttpGet"https://raw.githubusercontent.com/jxrivmthbr
 
 local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
 
-getgenv().zephyrhubversion = "v1.2"
-
-local win = lib:Window(GameName,Color3.fromRGB(44, 120, 224), Enum.KeyCode.RightControl)
+local win = lib:Window(GameName,Color3.fromRGB(111, 0, 255), Enum.KeyCode.RightControl)
 
 
 local info = win:Tab("Information")
@@ -86,9 +84,9 @@ local itemFarm = coroutine.wrap(function()
 						local clickdetector = v.Parent.ClickDetector
 
 						playerRoot.CFrame = mesh.CFrame
-						wait(0.35)
+						wait(0.36)
 						fireclickdetector(clickdetector)
-						wait(0.35)
+						wait(0.36)
 					until not game:GetService("Workspace")["Item_Spawns"].Items:FindFirstChild(v)
 				end
 			end
@@ -213,7 +211,7 @@ playertab:Toggle("Inf Jump", false, function(t)
 end)
 	
 game:GetService("UserInputService").JumpRequest:connect(function()
-	if etgenv().infjumptoggle then
+	if getgenv().infjumptoggle then
 		game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
 	end
 end)
